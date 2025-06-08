@@ -1,54 +1,68 @@
-/* Global styles for GloboCorp GPT Genie */
 :root {
-  --primary-color: #007BFF;
-  --secondary-color: #f0f0f0;
-  --font-size-base: 1rem;
-  --spacing-unit: 0.625rem; /* Equivalent to 10px at default font size */
+	--primary-bg: #4a5d7a;
+	--chat-bg: #f0f2f5;
+	--user-bg: #a3bffa;
+	--bot-bg: #e4e6eb;
+	--text-color: #333;
+	--border-radius: 0.625rem; /* 10px in rem */
+	--font-size-base: 1rem;
+	--spacing-unit: 0.3125rem; /* 5px in rem */
 }
 
 body {
-  font-family: Arial, sans-serif;
-  margin: calc(var(--spacing-unit) * 2);
-  font-size: var(--font-size-base);
+	font-family: Arial, sans-serif;
+	margin: calc(var(--spacing-unit) * 6.4); /* 20px in rem */
+	background-color: var(--primary-bg);
+	color: var(--text-color);
 }
 
-h1 {
-  color: var(--primary-color);
+header h1 {
+	color: #ff0000;
+	margin-bottom: var(--spacing-unit);
 }
 
-.chat-container {
-  border: 1px solid #000;
-  height: 12.5rem; /* 200px equivalent */
-  overflow-y: scroll;
-  padding: var(--spacing-unit);
-  margin-bottom: var(--spacing-unit);
+.chat {
+	border: 1px solid var(--text-color);
+	height: 12.5rem; /* 200px in rem */
+	overflow-y: scroll;
+	padding: var(--spacing-unit);
+	background-color: var(--chat-bg);
+	border-radius: var(--border-radius);
 }
 
 .message {
-  margin: calc(var(--spacing-unit) / 2) 0;
+	margin: var(--spacing-unit) 0;
+	padding: var(--spacing-unit);
+	border-radius: var(--border-radius);
 }
 
 .user {
-  background: lightblue;
-  text-align: right;
+	background-color: var(--user-bg);
+	text-align: right;
 }
 
 .bot {
-  background: var(--secondary-color);
+	background-color: var(--bot-bg);
+}
+
+.message-form {
+	display: flex;
+	gap: var(--spacing-unit);
 }
 
 input, button {
-  font-size: var(--font-size-base);
-  padding: calc(var(--spacing-unit) / 2);
+	padding: var(--spacing-unit);
+	border-radius: var(--border-radius);
+	border: none;
 }
 
-button {
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background: darken(var(--primary-color), 10%);
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
 }
