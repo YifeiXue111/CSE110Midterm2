@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GloboCorp GPT Genie</title>
-  <link rel="stylesheet" href="styles.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GloboCorp GPT Genie</title>
+	<link rel="stylesheet" href="styles.css">
+	<noscript>
+		<style>body { display: none; }</style>
+		<h1>JavaScript is required to use the GloboCorp GPT Genie!</h1>
+		<p>Please enable JavaScript to continue.</p>
+	</noscript>
 </head>
 <body>
-  <header>
-    <h1>GloboCorp's GPT Genie</h1>
-    <p>Tell us your wishes and watch your dreams come true!</p>
-  </header>
-  <main>
-    <section role="log" aria-live="polite" id="chat" class="chat-container"></section>
-    <form id="chat-form">
-      <label for="input">Your Message:</label>
-      <input type="text" id="input" placeholder="Type your wish..." required>
-      <button type="submit">Send</button>
-    </form>
-    <noscript>
-      <p>Please enable JavaScript to use the chat feature.</p>
-    </noscript>
-  </main>
-  <script type="module" src="script.js"></script>
+	<header>
+		<h1>GloboCorp GPT Genie</h1>
+		<p>Tell us your wishes and all of your dreams will come true!</p>
+	</header>
+	<main>
+		<div id="chat" class="chat" aria-live="polite"></div>
+		<form id="message-form" class="message-form">
+			<label for="input" class="visually-hidden">Enter your wish</label>
+			<input type="text" id="input" name="input" required aria-label="Enter your wish">
+			<button type="submit">Send</button>
+		</form>
+	</main>
+	<script type="module" src="script.js"></script>
 </body>
 </html>
