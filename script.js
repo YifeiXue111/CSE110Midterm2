@@ -1,15 +1,10 @@
-// Handle chat functionality for GloboCorp GPT Genie
-// Author: Refactored by xAI Team
-// Contact: support@xai.com for further assistance
-
 class ChatManager {
 	constructor() {
-		this.messages = [];
-		this.chatElement = document.getElementById('chat');
+		this.chatElement = document.getElementById('chat-box');
 		this.form = document.getElementById('message-form');
 		this.input = document.getElementById('input');
 		this.initEventListeners();
-		console.log('GloboCorp GPT Genie 2.0 loaded @', new Date());
+		this.loadInitialMessages();
 	}
 
 	initEventListeners() {
@@ -20,28 +15,26 @@ class ChatManager {
 		e.preventDefault();
 		const prompt = this.input.value.trim();
 
-		if (!prompt) {
-			alert('Please enter a wish!');
-			return;
-		}
+		if (!prompt) return;
 
-		this.addMessage('You', prompt);
+		this.addMessage('YOU', prompt);
 		this.input.value = '';
 		this.simulateReply();
 	}
 
-	addMessage(sender, message) {
-		this.messages.push({ sender, message });
-		this.chatElement.innerHTML += `<div class="message ${sender.toLowerCase()}">${sender}: ${message}</div>`;
+	addMessage(sender, text) {
+		const message = document.createElement('div');
+		message.className = `message ${sender.toLowerCase()}`;
+		message.innerHTML = `<div class="label">${sender}</div>${text}`;
+		this.chatElement.appendChild(message);
 		this.chatElement.scrollTop = this.chatElement.scrollHeight;
 	}
 
 	simulateReply() {
-		const replies = ["Cool!", "Awesome!", "Noice", "Killer idea", "Lowkey fire", "Fire", "Goated idea", "I hear you...", "Sounds like a plan"];
 		setTimeout(() => {
-			const reply = replies[Math.floor(Math.random() * replies.length)];
-			this.addMessage('Bot', reply);
-		}, 500);
+			const replyText = 'Presto...100 points!';
+			this.addMessage('GENIE', replyText);
+		}, 600);
 	}
 }
 
