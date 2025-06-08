@@ -1,0 +1,54 @@
+/* Global styles for GloboCorp GPT Genie */
+:root {
+  --primary-color: #007BFF;
+  --secondary-color: #f0f0f0;
+  --font-size-base: 1rem;
+  --spacing-unit: 0.625rem; /* Equivalent to 10px at default font size */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: calc(var(--spacing-unit) * 2);
+  font-size: var(--font-size-base);
+}
+
+h1 {
+  color: var(--primary-color);
+}
+
+.chat-container {
+  border: 1px solid #000;
+  height: 12.5rem; /* 200px equivalent */
+  overflow-y: scroll;
+  padding: var(--spacing-unit);
+  margin-bottom: var(--spacing-unit);
+}
+
+.message {
+  margin: calc(var(--spacing-unit) / 2) 0;
+}
+
+.user {
+  background: lightblue;
+  text-align: right;
+}
+
+.bot {
+  background: var(--secondary-color);
+}
+
+input, button {
+  font-size: var(--font-size-base);
+  padding: calc(var(--spacing-unit) / 2);
+}
+
+button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: darken(var(--primary-color), 10%);
+}
