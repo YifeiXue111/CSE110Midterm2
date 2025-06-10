@@ -1,112 +1,148 @@
 :root {
-	--background-color: #4a5a70;
-	--chat-bg: #fff;
-	--genie-bg: #f0f2f5;
-	--you-bg: #e0efff;
-	--text-color: #000;
-	--header-text-color: red;
-	--border-radius: 0.9375rem; /* 15px in rem */
-	--font-size-base: 1rem;
-	--spacing-unit: 0.625rem; /* 10px in rem */
-	--message-padding: 0.75rem 1rem; /* 12px 16px in rem */
-	--max-width: 37.5rem; /* 600px in rem */
-	--chat-height: 25rem; /* 400px in rem */
+  --background-color: #4a5a70;
+  --chat-bg: #fff;
+  --genie-bg: #f0f2f5;
+  --you-bg: #e0efff;
+  --text-color: #000;
+  --header-text-color: red;
+  --border-radius: 0.9375rem;
+  --font-size-base: 1rem;
+  --spacing-unit: 0.625rem;
+  --message-padding: 0.75rem 1rem;
+  --max-width: 37.5rem;
+  --chat-height: 25rem;
 }
 
 body {
-	margin: 0;
-	font-family: 'Helvetica Neue', Arial, sans-serif;
-	background-color: var(--background-color);
-	color: var(--text-color);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
-	text-align: center;
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 header h1 {
-	color: var(--header-text-color);
-	margin-top: calc(var(--spacing-unit) * 4.8); /* 30px in rem */
-	font-size: 2.5rem;
+  color: var(--header-text-color);
+  font-size: 2.5rem;
+  margin: 0;
 }
 
 header p {
-	color: #fff;
-	font-style: italic;
-	margin-bottom: var(--spacing-unit) * 3.2; /* 20px in rem */
+  color: #fff;
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.chat-container {
+  background-color: var(--chat-bg);
+  border-radius: var(--border-radius);
+  width: var(--max-width);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .chat-box {
-	background-color: var(--chat-bg);
-	border-radius: var(--border-radius);
-	width: var(--max-width);
-	height: var(--chat-height);
-	padding: var(--spacing-unit);
-	overflow-y: auto;
-	display: flex;
-	flex-direction: column;
-	gap: var(--spacing-unit) * 1.6; /* 10px in rem */
+  height: var(--chat-height);
+  padding: var(--spacing-unit);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .message {
-	max-width: 70%;
-	padding: var(--message-padding);
-	border-radius: 0.75rem; /* 12px in rem */
-	font-weight: 500;
+  max-width: 75%;
+  padding: var(--message-padding);
+  border-radius: 0.75rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
 }
 
 .genie {
-	background-color: var(--genie-bg);
-	align-self: flex-start;
+  background-color: var(--genie-bg);
+  align-self: flex-start;
 }
 
 .you {
-	background-color: var(--you-bg);
-	align-self: flex-end;
+  background-color: var(--you-bg);
+  align-self: flex-end;
 }
 
 .label {
-	font-size: 0.75rem;
-	font-weight: bold;
-	color: #666;
-	text-transform: uppercase;
-	margin-bottom: 0.25rem; /* 4px in rem */
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
 }
 
 .message-form {
-	margin-top: var(--spacing-unit);
-	width: var(--max-width);
-	display: flex;
-	gap: var(--spacing-unit) * 1.6; /* 10px in rem */
+  margin-top: 0;
+  width: 100%;
+  display: flex;
+  gap: var(--spacing-unit);
+  padding: var(--spacing-unit);
+  align-items: center;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
-input, button {
-	padding: var(--spacing-unit);
-	border: 1px solid #ccc;
-	border-radius: 1.25rem; /* 20px in rem */
-	font-size: var(--font-size-base);
+.input-label {
+  font-weight: bold;
+  color: #666;
+  margin-right: var(--spacing-unit);
+  white-space: nowrap; /* Prevent label from wrapping */
+}
+
+input,
+button {
+  padding: var(--spacing-unit);
+  font-size: var(--font-size-base);
+  border-radius: 1.25rem;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Ensure padding doesn't exceed container */
+}
+
+input {
+  flex: 1;
+  max-width: calc(100% - 6rem); /* Adjust to fit within container, accounting for label and button */
 }
 
 button {
-	background-color: #87bfff;
-	border: none;
-	cursor: pointer;
+  background-color: #87bfff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-	background-color: #5fa8ff;
+  background-color: #5fa8ff;
 }
 
 .visually-hidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
+

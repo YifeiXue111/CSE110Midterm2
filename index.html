@@ -5,11 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Globocorp GPT Genie</title>
 	<link rel="stylesheet" href="styles.css">
-	<noscript>
-		<style>body { display: none; }</style>
-		<h1>JavaScript is required to use the Globocorp GPT Genie!</h1>
-		<p>Please enable JavaScript to continue.</p>
-	</noscript>
 </head>
 <body>
 	<header>
@@ -17,13 +12,17 @@
 		<p>Tell us your wishes and all of your dreams will come true!</p>
 	</header>
 	<main>
-		<div id="chat-box" class="chat-box" aria-live="polite"></div>
-		<form id="message-form" class="message-form">
-			<label for="input" class="visually-hidden">Enter your wish</label>
-			<input type="text" id="input" name="input" required aria-label="Enter your wish" placeholder="What are your wishes mighty customer?">
-			<button type="submit">Send</button>
-		</form>
+		<div class="chat-container">
+			<div id="chat-box" class="chat-box" aria-live="polite"></div>
+			<form id="message-form" class="message-form">
+				<span class="input-label">Your message</span>
+				<label for="input" class="visually-hidden">Enter your wish</label>
+				<input type="text" id="input" name="input" required aria-label="Enter your wish" placeholder="What are your wishes mighty customer?">
+				<button type="submit">Send</button>
+			</form>
+		</div>
 	</main>
 	<script type="module" src="script.js"></script>
 </body>
 </html>
+
